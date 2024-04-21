@@ -6,11 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "generate-types": "openapi-generator-cli generate -g typescript-fetch -i ./openapi.yaml -o ./src/types/"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@openapitools/openapi-generator-cli": "^2.13.2",
     "axios": "^1.6.8",
     "axios-cache-interceptor": "^1.5.1",
     "jotai": "^2.8.0",

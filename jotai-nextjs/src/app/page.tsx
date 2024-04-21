@@ -1,7 +1,7 @@
 "use client";
 import { useAtomValue, useSetAtom } from "jotai";
 import { Pokemon, PokemonClient } from "pokenode-ts";
-import { ChangeEventHandler, Suspense, use, useRef } from "react";
+import { ChangeEventHandler, Suspense, use } from "react";
 import atomWithDebounce from "./atomWithDebounce";
 import { ErrorBoundary } from "./error-boundary";
 
