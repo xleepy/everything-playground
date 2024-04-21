@@ -18,9 +18,13 @@ const map = new WeakMap();
 function usePromiseHook<T>(promise: Promise<T>): T {
   const data = map.get(promise);
   if (!data) {
-    throw promise.then((data) => {
-      map.set(promise, data);
-    });
+    throw promise
+      .then((data) => {
+        map.set(promise, data);
+      })
+      .catch((err) => {
+        map.set(promise, err);
+      });
   }
   return data;
 }
