@@ -14,6 +14,7 @@ const api = new PokemonClient();
 
 // poor-mans use hook. Will not work with context though
 // https://react.dev/reference/react/use
+// todo try to clear outdated data or hope that gc will clear them
 const map = new WeakMap();
 function usePromiseHook<T>(promise: Promise<T>): T {
   const data = map.get(promise);
