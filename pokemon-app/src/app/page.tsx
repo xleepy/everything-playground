@@ -1,7 +1,5 @@
+import { pokemonApi } from "@/lib/api";
 import Link from "next/link";
-import { PokemonClient } from "pokenode-ts";
-
-export const pokemonApi = new PokemonClient();
 
 export default async function Home() {
   const pokemons = await pokemonApi.listPokemons();

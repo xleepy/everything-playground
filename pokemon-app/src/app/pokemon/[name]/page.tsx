@@ -1,4 +1,4 @@
-import { pokemonApi } from "@/app/page";
+import { pokemonApi } from "@/lib/api";
 import Image from "next/image";
 
 type Props = {
