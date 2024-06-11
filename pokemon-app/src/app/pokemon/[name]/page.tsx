@@ -1,5 +1,7 @@
-import { pokemonApi } from "@/lib/api";
-import Image from "next/image";
+import { ExtendedPokemon, pokemonApi } from "@/lib/api";
+import { Fragment } from "react";
+import { SidePanel } from "./side-panel";
+import { Content } from "./content";
 
 type Props = {
   params: {
@@ -8,20 +10,11 @@ type Props = {
 };
 
 export default async function Page({ params }: Props) {
-  const { name, sprites } = await pokemonApi.getPokemonByName(params.name);
+  const pokemon = await pokemonApi.getPokemonByName(params.name);
   return (
-    <div className="flex items-center">
-      <div>
-        <h2>{name}</h2>
-      </div>
-      {sprites.front_default && (
-        <Image
-          alt="pokemon-image"
-          src={sprites.front_default}
-          width={150}
-          height={150}
-        />
-      )}
-    </div>
+    <Fragment>
+      <SidePanel pokemon={pokemon} />
+      <Content pokemon={pokemon as ExtendedPokemon} />
+    </Fragment>
   );
 }

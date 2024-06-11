@@ -3,7 +3,5 @@ export default function Layout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div className="flex items-center justify-center p-24">{children}</div>
-  );
+  return <div className="flex h-full">{children}</div>;
 }
